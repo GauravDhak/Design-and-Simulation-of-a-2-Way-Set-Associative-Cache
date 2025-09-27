@@ -1,0 +1,673 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x6681F0E89D3291A0",
+      "device": "xc7a35ticpg236-1L",
+      "gen_directory": "../../../../Cache_Memory_Simulator.gen/sources_1/bd/Cache_Memory_Simulator",
+      "name": "Cache_Memory_Simulator",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2025.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "cache_top_0": "",
+      "mem_line_if_0": "",
+      "clk_div_enable_0": "",
+      "clk_wiz_0": "",
+      "vio_0": "",
+      "ila_0": "",
+      "proc_sys_reset_fast": "",
+      "xlconstant_1": "",
+      "util_vector_logic_0": ""
+    },
+    "ports": {
+      "clk_in1_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "Cache_Memory_Simulator_clk_in1_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "leds_0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "uart_tx_0": {
+        "direction": "O"
+      },
+      "reset_rtl_0_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      }
+    },
+    "components": {
+      "cache_top_0": {
+        "vlnv": "xilinx.com:module_ref:cache_top:1.0",
+        "ip_revision": "1",
+        "xci_name": "Cache_Memory_Simulator_cache_top_0_0",
+        "xci_path": "ip\\Cache_Memory_Simulator_cache_top_0_0\\Cache_Memory_Simulator_cache_top_0_0.xci",
+        "inst_hier_path": "cache_top_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "cache_top",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "const_prop"
+              }
+            }
+          },
+          "step": {
+            "direction": "I"
+          },
+          "cpu_req": {
+            "direction": "I"
+          },
+          "cpu_addr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "cpu_wdata": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "cpu_be": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "cpu_we": {
+            "direction": "I"
+          },
+          "cpu_rdata": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "cpu_ready": {
+            "direction": "O"
+          },
+          "cpu_rvalid": {
+            "direction": "O"
+          },
+          "cpu_status": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "mem_req": {
+            "direction": "O"
+          },
+          "mem_we": {
+            "direction": "O"
+          },
+          "mem_addr_line": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "mem_wline": {
+            "direction": "O",
+            "left": "127",
+            "right": "0"
+          },
+          "mem_ready": {
+            "direction": "I"
+          },
+          "mem_rvalid": {
+            "direction": "I"
+          },
+          "mem_rline": {
+            "direction": "I",
+            "left": "127",
+            "right": "0"
+          },
+          "mem_status": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "leds": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "uart_divider": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "uart_en": {
+            "direction": "I"
+          },
+          "uart_tx": {
+            "direction": "O"
+          }
+        }
+      },
+      "mem_line_if_0": {
+        "vlnv": "xilinx.com:module_ref:mem_line_if:1.0",
+        "ip_revision": "1",
+        "xci_name": "Cache_Memory_Simulator_mem_line_if_0_0",
+        "xci_path": "ip\\Cache_Memory_Simulator_mem_line_if_0_0\\Cache_Memory_Simulator_mem_line_if_0_0.xci",
+        "inst_hier_path": "mem_line_if_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "mem_line_if",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "const_prop"
+              }
+            }
+          },
+          "mem_req": {
+            "direction": "I"
+          },
+          "mem_we": {
+            "direction": "I"
+          },
+          "mem_addr_line": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "mem_wline": {
+            "direction": "I",
+            "left": "127",
+            "right": "0"
+          },
+          "mem_rline": {
+            "direction": "O",
+            "left": "127",
+            "right": "0"
+          },
+          "mem_ready": {
+            "direction": "O"
+          },
+          "mem_rvalid": {
+            "direction": "O"
+          }
+        }
+      },
+      "clk_div_enable_0": {
+        "vlnv": "xilinx.com:module_ref:clk_div_enable:1.0",
+        "ip_revision": "1",
+        "xci_name": "Cache_Memory_Simulator_clk_div_enable_0_0",
+        "xci_path": "ip\\Cache_Memory_Simulator_clk_div_enable_0_0\\Cache_Memory_Simulator_clk_div_enable_0_0.xci",
+        "inst_hier_path": "clk_div_enable_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "clk_div_enable",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "const_prop"
+              }
+            }
+          },
+          "tick": {
+            "direction": "O"
+          }
+        }
+      },
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "ip_revision": "16",
+        "xci_name": "Cache_Memory_Simulator_clk_wiz_0_0",
+        "xci_path": "ip\\Cache_Memory_Simulator_clk_wiz_0_0\\Cache_Memory_Simulator_clk_wiz_0_0.xci",
+        "inst_hier_path": "clk_wiz_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "100.00000"
+          },
+          "RESET_PORT": {
+            "value": "reset"
+          },
+          "RESET_TYPE": {
+            "value": "ACTIVE_HIGH"
+          },
+          "USE_LOCKED": {
+            "value": "true"
+          },
+          "USE_RESET": {
+            "value": "true"
+          }
+        }
+      },
+      "vio_0": {
+        "vlnv": "xilinx.com:ip:vio:3.0",
+        "ip_revision": "27",
+        "xci_name": "Cache_Memory_Simulator_vio_0_0",
+        "xci_path": "ip\\Cache_Memory_Simulator_vio_0_0\\Cache_Memory_Simulator_vio_0_0.xci",
+        "inst_hier_path": "vio_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_NUM_PROBE_IN": {
+            "value": "0"
+          },
+          "C_NUM_PROBE_OUT": {
+            "value": "7"
+          },
+          "C_PROBE_OUT2_WIDTH": {
+            "value": "16"
+          },
+          "C_PROBE_OUT3_WIDTH": {
+            "value": "32"
+          },
+          "C_PROBE_OUT4_WIDTH": {
+            "value": "4"
+          },
+          "C_PROBE_OUT6_WIDTH": {
+            "value": "16"
+          }
+        }
+      },
+      "ila_0": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "ip_revision": "18",
+        "xci_name": "Cache_Memory_Simulator_ila_0_0",
+        "xci_path": "ip\\Cache_Memory_Simulator_ila_0_0\\Cache_Memory_Simulator_ila_0_0.xci",
+        "inst_hier_path": "ila_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_MONITOR_TYPE": {
+            "value": "Native"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "11"
+          },
+          "C_PROBE0_WIDTH": {
+            "value": "32"
+          },
+          "C_PROBE1_WIDTH": {
+            "value": "32"
+          },
+          "C_PROBE2_WIDTH": {
+            "value": "4"
+          },
+          "C_PROBE3_WIDTH": {
+            "value": "32"
+          },
+          "C_PROBE4_WIDTH": {
+            "value": "128"
+          },
+          "C_PROBE5_WIDTH": {
+            "value": "4"
+          },
+          "C_PROBE6_WIDTH": {
+            "value": "128"
+          },
+          "C_PROBE7_WIDTH": {
+            "value": "32"
+          }
+        }
+      },
+      "proc_sys_reset_fast": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "ip_revision": "17",
+        "xci_name": "Cache_Memory_Simulator_proc_sys_reset_fast_0",
+        "xci_path": "ip\\Cache_Memory_Simulator_proc_sys_reset_fast_0\\Cache_Memory_Simulator_proc_sys_reset_fast_0.xci",
+        "inst_hier_path": "proc_sys_reset_fast",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_AUX_RESET_HIGH": {
+            "value": "1"
+          },
+          "C_AUX_RST_WIDTH": {
+            "value": "1"
+          },
+          "C_NUM_BUS_RST": {
+            "value": "1"
+          },
+          "C_NUM_PERP_RST": {
+            "value": "1"
+          }
+        }
+      },
+      "xlconstant_1": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "ip_revision": "10",
+        "xci_name": "Cache_Memory_Simulator_xlconstant_1_0",
+        "xci_path": "ip\\Cache_Memory_Simulator_xlconstant_1_0\\Cache_Memory_Simulator_xlconstant_1_0.xci",
+        "inst_hier_path": "xlconstant_1",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          },
+          "CONST_WIDTH": {
+            "value": "2"
+          }
+        }
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "ip_revision": "5",
+        "xci_name": "Cache_Memory_Simulator_util_vector_logic_0_0",
+        "xci_path": "ip\\Cache_Memory_Simulator_util_vector_logic_0_0\\Cache_Memory_Simulator_util_vector_logic_0_0.xci",
+        "inst_hier_path": "util_vector_logic_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Net": {
+        "ports": [
+          "vio_0/probe_out2",
+          "ila_0/probe0",
+          "cache_top_0/cpu_addr"
+        ]
+      },
+      "Net1": {
+        "ports": [
+          "vio_0/probe_out3",
+          "cache_top_0/cpu_wdata",
+          "ila_0/probe1"
+        ]
+      },
+      "cache_top_0_cpu_rdata": {
+        "ports": [
+          "cache_top_0/cpu_rdata",
+          "ila_0/probe7"
+        ]
+      },
+      "cache_top_0_cpu_ready": {
+        "ports": [
+          "cache_top_0/cpu_ready",
+          "ila_0/probe8"
+        ]
+      },
+      "cache_top_0_cpu_rvalid": {
+        "ports": [
+          "cache_top_0/cpu_rvalid",
+          "ila_0/probe9"
+        ]
+      },
+      "cache_top_0_cpu_status": {
+        "ports": [
+          "cache_top_0/cpu_status",
+          "ila_0/probe2"
+        ]
+      },
+      "cache_top_0_leds": {
+        "ports": [
+          "cache_top_0/leds",
+          "leds_0"
+        ]
+      },
+      "cache_top_0_mem_addr_line": {
+        "ports": [
+          "cache_top_0/mem_addr_line",
+          "ila_0/probe3",
+          "mem_line_if_0/mem_addr_line"
+        ]
+      },
+      "cache_top_0_mem_req": {
+        "ports": [
+          "cache_top_0/mem_req",
+          "mem_line_if_0/mem_req"
+        ]
+      },
+      "cache_top_0_mem_status": {
+        "ports": [
+          "cache_top_0/mem_status",
+          "ila_0/probe5"
+        ]
+      },
+      "cache_top_0_mem_we": {
+        "ports": [
+          "cache_top_0/mem_we",
+          "mem_line_if_0/mem_we"
+        ]
+      },
+      "cache_top_0_mem_wline": {
+        "ports": [
+          "cache_top_0/mem_wline",
+          "ila_0/probe4",
+          "mem_line_if_0/mem_wline"
+        ]
+      },
+      "cache_top_0_uart_tx": {
+        "ports": [
+          "cache_top_0/uart_tx",
+          "uart_tx_0"
+        ]
+      },
+      "clk_div_enable_0_tick": {
+        "ports": [
+          "clk_div_enable_0/tick",
+          "cache_top_0/step"
+        ]
+      },
+      "clk_in1_0_1": {
+        "ports": [
+          "clk_in1_0",
+          "clk_wiz_0/clk_in1"
+        ]
+      },
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "clk_wiz_0/clk_out1",
+          "proc_sys_reset_fast/slowest_sync_clk",
+          "mem_line_if_0/clk",
+          "vio_0/clk",
+          "cache_top_0/clk",
+          "ila_0/clk",
+          "clk_div_enable_0/clk"
+        ]
+      },
+      "clk_wiz_0_locked": {
+        "ports": [
+          "clk_wiz_0/locked",
+          "proc_sys_reset_fast/dcm_locked"
+        ]
+      },
+      "mem_line_if_0_mem_ready": {
+        "ports": [
+          "mem_line_if_0/mem_ready",
+          "cache_top_0/mem_ready"
+        ]
+      },
+      "mem_line_if_0_mem_rline": {
+        "ports": [
+          "mem_line_if_0/mem_rline",
+          "ila_0/probe6",
+          "cache_top_0/mem_rline"
+        ]
+      },
+      "mem_line_if_0_mem_rvalid": {
+        "ports": [
+          "mem_line_if_0/mem_rvalid",
+          "cache_top_0/mem_rvalid"
+        ]
+      },
+      "proc_sys_main_mb_reset": {
+        "ports": [
+          "proc_sys_reset_fast/mb_reset",
+          "mem_line_if_0/rst",
+          "cache_top_0/rst",
+          "ila_0/probe10",
+          "clk_div_enable_0/rst"
+        ]
+      },
+      "reset_rtl_0_0_1": {
+        "ports": [
+          "reset_rtl_0_0",
+          "clk_wiz_0/reset",
+          "util_vector_logic_0/Op1"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "proc_sys_reset_fast/ext_reset_in"
+        ]
+      },
+      "vio_0_probe_out0": {
+        "ports": [
+          "vio_0/probe_out0",
+          "cache_top_0/cpu_req"
+        ]
+      },
+      "vio_0_probe_out1": {
+        "ports": [
+          "vio_0/probe_out1",
+          "cache_top_0/cpu_we"
+        ]
+      },
+      "vio_0_probe_out4": {
+        "ports": [
+          "vio_0/probe_out4",
+          "cache_top_0/cpu_be"
+        ]
+      },
+      "vio_0_probe_out5": {
+        "ports": [
+          "vio_0/probe_out5",
+          "cache_top_0/uart_en"
+        ]
+      },
+      "vio_0_probe_out6": {
+        "ports": [
+          "vio_0/probe_out6",
+          "cache_top_0/uart_divider"
+        ]
+      },
+      "xlconstant_1_dout": {
+        "ports": [
+          "xlconstant_1/dout",
+          "proc_sys_reset_fast/aux_reset_in",
+          "proc_sys_reset_fast/mb_debug_sys_rst"
+        ]
+      }
+    }
+  }
+}
